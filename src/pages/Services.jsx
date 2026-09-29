@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   CheckCircle2,
@@ -148,6 +149,34 @@ const process = [
 function Services() {
   return (
     <>
+        <Helmet>
+  <title>IT Services | Brian Mumo</title>
+
+  <meta
+    name="description"
+    content="Professional IT services by Brian Mumo, including IT support, POS systems, networking, inventory systems, IT helpdesk solutions, system integration, custom software and IT maintenance."
+  />
+
+  <meta
+    name="keywords"
+    content="IT services Kenya, IT support Kenya, POS systems Kenya, networking services Kenya, IT helpdesk, inventory systems, system integration, custom software"
+  />
+
+  <meta
+    property="og:title"
+    content="IT Services | Brian Mumo"
+  />
+
+  <meta
+    property="og:description"
+    content="IT support, POS systems, networking, business systems, helpdesk platforms, system integration and custom software."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+</Helmet>
       {/* =====================================================
           PAGE HERO
       ===================================================== */}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   CheckCircle2,
@@ -25,6 +26,34 @@ function Contact() {
 
   return (
     <>
+    <Helmet>
+  <title>Contact Brian Mumo | IT Services</title>
+
+  <meta
+    name="description"
+    content="Contact Brian Mumo for IT support, POS systems, networking, business systems, IT helpdesk solutions, system integration, custom software and IT maintenance."
+  />
+
+  <meta
+    name="keywords"
+    content="contact IT support Kenya, IT services Kenya, POS support Kenya, networking support Kenya, IT consultant Kenya, Brian Mumo"
+  />
+
+  <meta
+    property="og:title"
+    content="Contact Brian Mumo | IT Services"
+  />
+
+  <meta
+    property="og:description"
+    content="Request IT support, POS solutions, networking, business systems, system integration or custom software services from Brian Mumo."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+</Helmet>
       {/* =====================================================
           PAGE HERO
       ===================================================== */}

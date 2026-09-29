@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   BarChart3,
@@ -90,6 +91,34 @@ const capabilities = [
 function Solutions() {
   return (
     <>
+    <Helmet>
+  <title>IT Solutions & Systems | Brian Mumo</title>
+
+  <meta
+    name="description"
+    content="Explore practical IT solutions and business systems developed by Brian Mumo, including the Jaza IT Helpdesk & Ticketing System, business dashboards, support platforms, system integration and custom software."
+  />
+
+  <meta
+    name="keywords"
+    content="IT solutions Kenya, IT systems Kenya, IT helpdesk system, ticketing system, business systems, system integration Kenya, custom software Kenya, Jaza IT Helpdesk"
+  />
+
+  <meta
+    property="og:title"
+    content="IT Solutions & Systems | Brian Mumo"
+  />
+
+  <meta
+    property="og:description"
+    content="Explore practical business technology solutions including IT helpdesk systems, ticketing platforms, dashboards, system integration and custom software."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+</Helmet>
       {/* =====================================================
           PAGE HERO
       ===================================================== */}

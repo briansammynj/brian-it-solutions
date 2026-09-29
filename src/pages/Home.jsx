@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   CheckCircle2,
@@ -54,6 +55,35 @@ const strengths = [
 function Home() {
   return (
     <>
+         <Helmet>
+        <title>Brian Mumo | IT Solutions • Systems • Support</title>
+
+        <meta
+          name="description"
+          content="Brian Mumo provides practical IT solutions, IT support, POS systems, networking, business systems, IT helpdesk platforms, system integration and custom software."
+        />
+
+        <meta
+          name="keywords"
+          content="IT support Kenya, IT solutions Kenya, POS systems Kenya, networking Kenya, IT helpdesk, system integration, custom software, Brian Mumo"
+        />
+
+        <meta
+          property="og:title"
+          content="Brian Mumo | IT Solutions • Systems • Support"
+        />
+
+        <meta
+          property="og:description"
+          content="Practical IT solutions for businesses — IT support, POS systems, networking, business systems, helpdesk platforms, integrations and custom software."
+        />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
+      </Helmet>
+
       {/* =====================================================
           HERO
       ===================================================== */}

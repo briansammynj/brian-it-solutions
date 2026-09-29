@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   CheckCircle2,
@@ -69,6 +70,34 @@ const approach = [
 function About() {
   return (
     <>
+    <Helmet>
+  <title>About Brian Mumo | IT Professional</title>
+
+  <meta
+    name="description"
+    content="Learn about Brian Mumo, an IT professional focused on business technology, IT support, POS systems, networking, systems integration, helpdesk platforms and practical IT solutions."
+  />
+
+  <meta
+    name="keywords"
+    content="Brian Mumo, IT professional Kenya, IT support Kenya, POS support Kenya, networking, system administration, IT solutions"
+  />
+
+  <meta
+    property="og:title"
+    content="About Brian Mumo | IT Professional"
+  />
+
+  <meta
+    property="og:description"
+    content="IT professional focused on practical business technology, IT support, POS systems, networking, systems integration and IT helpdesk solutions."
+  />
+
+  <meta
+    property="og:type"
+    content="profile"
+  />
+</Helmet>
       {/* =====================================================
           PAGE HERO
       ===================================================== */}
