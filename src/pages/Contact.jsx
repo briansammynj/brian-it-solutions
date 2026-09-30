@@ -26,34 +26,35 @@ function Contact() {
 
   return (
     <>
-    <Helmet>
-  <title>Contact Brian Mumo | IT Services</title>
+      <Helmet>
+        <title>Contact Brian Mumo | IT Services</title>
 
-  <meta
-    name="description"
-    content="Contact Brian Mumo for IT support, POS systems, networking, business systems, IT helpdesk solutions, system integration, custom software and IT maintenance."
-  />
+        <meta
+          name="description"
+          content="Contact Brian Mumo for IT support, POS systems, networking, business systems, IT helpdesk solutions, system integration, custom software and IT maintenance."
+        />
 
-  <meta
-    name="keywords"
-    content="contact IT support Kenya, IT services Kenya, POS support Kenya, networking support Kenya, IT consultant Kenya, Brian Mumo"
-  />
+        <meta
+          name="keywords"
+          content="contact IT support Kenya, IT services Kenya, POS support Kenya, networking support Kenya, IT consultant Kenya, Brian Mumo"
+        />
 
-  <meta
-    property="og:title"
-    content="Contact Brian Mumo | IT Services"
-  />
+        <meta
+          property="og:title"
+          content="Contact Brian Mumo | IT Services"
+        />
 
-  <meta
-    property="og:description"
-    content="Request IT support, POS solutions, networking, business systems, system integration or custom software services from Brian Mumo."
-  />
+        <meta
+          property="og:description"
+          content="Request IT support, POS solutions, networking, business systems, system integration or custom software services from Brian Mumo."
+        />
 
-  <meta
-    property="og:type"
-    content="website"
-  />
-</Helmet>
+        <meta
+          property="og:type"
+          content="website"
+        />
+      </Helmet>
+
       {/* =====================================================
           PAGE HERO
       ===================================================== */}
@@ -139,6 +140,7 @@ function Contact() {
               <div className="contact-methods">
 
                 {/* Email */}
+
                 <a
                   href="mailto:brianmumoit@gmail.com"
                   className="contact-method"
@@ -156,6 +158,7 @@ function Contact() {
                 </a>
 
                 {/* Phone */}
+
                 <a
                   href="tel:+254711437854"
                   className="contact-method"
@@ -173,6 +176,7 @@ function Contact() {
                 </a>
 
                 {/* WhatsApp */}
+
                 <a
                   href="https://wa.me/254711437854"
                   target="_blank"
@@ -263,8 +267,9 @@ function Contact() {
                     </h2>
 
                     <p>
-                      Share a few details and I'll know how to
-                      better understand your request.
+                      Share a few details about your business
+                      and request so I can better understand how
+                      to help.
                     </p>
                   </div>
 
@@ -288,7 +293,7 @@ function Contact() {
 
                     <div className="form-group">
                       <label htmlFor="company">
-                        Company
+                        Company / Business
                       </label>
 
                       <input
@@ -334,31 +339,112 @@ function Contact() {
 
                   </div>
 
-                  {/* Service */}
+                  {/* Location + Service */}
 
-                  <div className="form-group">
-                    <label htmlFor="service">
-                      What do you need help with?
-                    </label>
+                  <div className="form-row">
 
-                    <select
-                      id="service"
-                      name="service"
-                      required
-                    >
-                      <option value="">
-                        Select a service
-                      </option>
+                    <div className="form-group">
+                      <label htmlFor="location">
+                        Business Location
+                      </label>
 
-                      {serviceOptions.map((service) => (
-                        <option
-                          key={service}
-                          value={service}
-                        >
-                          {service}
+                      <input
+                        id="location"
+                        name="location"
+                        type="text"
+                        placeholder="e.g. Nairobi"
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <label htmlFor="service">
+                        Service Needed
+                      </label>
+
+                      <select
+                        id="service"
+                        name="service"
+                        required
+                      >
+                        <option value="">
+                          Select a service
                         </option>
-                      ))}
-                    </select>
+
+                        {serviceOptions.map((service) => (
+                          <option
+                            key={service}
+                            value={service}
+                          >
+                            {service}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                  </div>
+
+                  {/* Urgency + Preferred Contact */}
+
+                  <div className="form-row">
+
+                    <div className="form-group">
+                      <label htmlFor="urgency">
+                        How urgent is this?
+                      </label>
+
+                      <select
+                        id="urgency"
+                        name="urgency"
+                      >
+                        <option value="">
+                          Select urgency
+                        </option>
+
+                        <option value="General enquiry">
+                          General enquiry
+                        </option>
+
+                        <option value="Planning / Future project">
+                          Planning / Future project
+                        </option>
+
+                        <option value="Need assistance soon">
+                          Need assistance soon
+                        </option>
+
+                        <option value="Urgent business issue">
+                          Urgent business issue
+                        </option>
+                      </select>
+                    </div>
+
+                    <div className="form-group">
+                      <label htmlFor="preferred_contact">
+                        Preferred Contact
+                      </label>
+
+                      <select
+                        id="preferred_contact"
+                        name="preferred_contact"
+                      >
+                        <option value="">
+                          Select method
+                        </option>
+
+                        <option value="Email">
+                          Email
+                        </option>
+
+                        <option value="Phone">
+                          Phone
+                        </option>
+
+                        <option value="WhatsApp">
+                          WhatsApp
+                        </option>
+                      </select>
+                    </div>
+
                   </div>
 
                   {/* Message */}

@@ -88,37 +88,61 @@ const capabilities = [
   },
 ];
 
+const projectScope = [
+  {
+    icon: Users,
+    title: "User & Role Management",
+    text: "Separate workflows and permissions for administrators, IT officers and branch users.",
+  },
+  {
+    icon: GitBranch,
+    title: "Branch Management",
+    text: "Organize support operations across multiple business branches.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Ticket Workflow",
+    text: "Handle issue reporting, assignment, status updates, comments and resolution.",
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Operational Dashboards",
+    text: "Provide role-specific views of support activity and ticket information.",
+  },
+];
+
 function Solutions() {
   return (
     <>
-    <Helmet>
-  <title>IT Solutions & Systems | Brian Mumo</title>
+      <Helmet>
+        <title>IT Solutions & Systems | Brian Mumo</title>
 
-  <meta
-    name="description"
-    content="Explore practical IT solutions and business systems developed by Brian Mumo, including the Jaza IT Helpdesk & Ticketing System, business dashboards, support platforms, system integration and custom software."
-  />
+        <meta
+          name="description"
+          content="Explore practical IT solutions and business systems developed by Brian Mumo, including the Jaza IT Helpdesk & Ticketing System, business dashboards, support platforms, system integration and custom software."
+        />
 
-  <meta
-    name="keywords"
-    content="IT solutions Kenya, IT systems Kenya, IT helpdesk system, ticketing system, business systems, system integration Kenya, custom software Kenya, Jaza IT Helpdesk"
-  />
+        <meta
+          name="keywords"
+          content="IT solutions Kenya, IT systems Kenya, IT helpdesk system, ticketing system, business systems, system integration Kenya, custom software Kenya, Jaza IT Helpdesk"
+        />
 
-  <meta
-    property="og:title"
-    content="IT Solutions & Systems | Brian Mumo"
-  />
+        <meta
+          property="og:title"
+          content="IT Solutions & Systems | Brian Mumo"
+        />
 
-  <meta
-    property="og:description"
-    content="Explore practical business technology solutions including IT helpdesk systems, ticketing platforms, dashboards, system integration and custom software."
-  />
+        <meta
+          property="og:description"
+          content="Explore practical business technology solutions including IT helpdesk systems, ticketing platforms, dashboards, system integration and custom software."
+        />
 
-  <meta
-    property="og:type"
-    content="website"
-  />
-</Helmet>
+        <meta
+          property="og:type"
+          content="website"
+        />
+      </Helmet>
+
       {/* =====================================================
           PAGE HERO
       ===================================================== */}
@@ -148,7 +172,6 @@ function Solutions() {
         </div>
       </section>
 
-
       {/* =====================================================
           FEATURED SOLUTION
       ===================================================== */}
@@ -158,7 +181,6 @@ function Solutions() {
 
           <div className="featured-solution-grid">
 
-            {/* Left */}
             <motion.div
               className="featured-solution-content"
               initial={{ opacity: 0, x: -25 }}
@@ -198,8 +220,8 @@ function Solutions() {
 
             </motion.div>
 
+            {/* Dashboard Preview */}
 
-            {/* Right - dashboard mockup */}
             <motion.div
               className="solution-dashboard"
               initial={{ opacity: 0, x: 25 }}
@@ -246,7 +268,6 @@ function Solutions() {
 
                   </div>
 
-
                   <div className="mock-main">
 
                     <div className="mock-heading">
@@ -260,31 +281,29 @@ function Solutions() {
                       </div>
                     </div>
 
-
                     <div className="mock-stats">
 
                       <div className="mock-stat">
                         <span>Total Tickets</span>
-                        <strong>128</strong>
+                        <strong>—</strong>
                       </div>
 
                       <div className="mock-stat">
                         <span>Open</span>
-                        <strong>24</strong>
+                        <strong>—</strong>
                       </div>
 
                       <div className="mock-stat">
                         <span>In Progress</span>
-                        <strong>17</strong>
+                        <strong>—</strong>
                       </div>
 
                       <div className="mock-stat">
                         <span>Resolved</span>
-                        <strong>87</strong>
+                        <strong>—</strong>
                       </div>
 
                     </div>
-
 
                     <div className="mock-table">
 
@@ -295,7 +314,7 @@ function Solutions() {
                       </div>
 
                       <div className="mock-table-row">
-                        <span>JZA-1042</span>
+                        <span>Ticket #</span>
                         <span className="mock-high">
                           High
                         </span>
@@ -305,7 +324,7 @@ function Solutions() {
                       </div>
 
                       <div className="mock-table-row">
-                        <span>JZA-1041</span>
+                        <span>Ticket #</span>
                         <span>Medium</span>
                         <span className="mock-resolved">
                           Resolved
@@ -313,7 +332,7 @@ function Solutions() {
                       </div>
 
                       <div className="mock-table-row">
-                        <span>JZA-1040</span>
+                        <span>Ticket #</span>
                         <span>Critical</span>
                         <span className="mock-open">
                           Open
@@ -325,7 +344,13 @@ function Solutions() {
                   </div>
 
                 </div>
+
               </div>
+
+              <p className="solution-preview-note">
+                Representative interface preview — data shown is for
+                demonstration purposes.
+              </p>
 
             </motion.div>
 
@@ -333,6 +358,76 @@ function Solutions() {
         </div>
       </section>
 
+      {/* =====================================================
+          PROJECT SCOPE
+      ===================================================== */}
+
+      <section className="project-scope-section">
+        <div className="container">
+
+          <div className="section-heading">
+
+            <span className="eyebrow">
+              PROJECT SCOPE
+            </span>
+
+            <h2>
+              A complete support workflow, not just a ticket form.
+            </h2>
+
+            <p>
+              The system was designed around the operational
+              requirements of a multi-branch IT support environment.
+            </p>
+
+          </div>
+
+          <div className="project-scope-grid">
+
+            {projectScope.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  className="project-scope-card"
+                  key={item.title}
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.06,
+                  }}
+                >
+
+                  <div className="project-scope-icon">
+                    <Icon size={21} />
+                  </div>
+
+                  <h3>
+                    {item.title}
+                  </h3>
+
+                  <p>
+                    {item.text}
+                  </p>
+
+                </motion.div>
+              );
+            })}
+
+          </div>
+
+        </div>
+      </section>
 
       {/* =====================================================
           THE PROBLEM
@@ -373,7 +468,6 @@ function Solutions() {
 
             </motion.div>
 
-
             <motion.div
               className="story-card story-card-highlight"
               initial={{ opacity: 0, y: 20 }}
@@ -409,7 +503,6 @@ function Solutions() {
         </div>
       </section>
 
-
       {/* =====================================================
           FEATURES
       ===================================================== */}
@@ -418,6 +511,7 @@ function Solutions() {
         <div className="container">
 
           <div className="section-heading">
+
             <span className="eyebrow">
               SYSTEM FEATURES
             </span>
@@ -430,8 +524,8 @@ function Solutions() {
               The system focuses on the processes an IT team needs
               to manage support requests effectively.
             </p>
-          </div>
 
+          </div>
 
           <div className="solution-feature-grid">
 
@@ -480,7 +574,6 @@ function Solutions() {
         </div>
       </section>
 
-
       {/* =====================================================
           TECHNOLOGY
       ===================================================== */}
@@ -512,7 +605,6 @@ function Solutions() {
               </p>
 
             </motion.div>
-
 
             <motion.div
               className="technology-stack"
@@ -549,7 +641,6 @@ function Solutions() {
         </div>
       </section>
 
-
       {/* =====================================================
           CAPABILITIES
       ===================================================== */}
@@ -558,6 +649,7 @@ function Solutions() {
         <div className="container">
 
           <div className="section-heading">
+
             <span className="eyebrow">
               CAPABILITIES
             </span>
@@ -565,8 +657,8 @@ function Solutions() {
             <h2>
               What the system makes possible.
             </h2>
-          </div>
 
+          </div>
 
           <div className="capabilities-grid">
 
@@ -597,6 +689,7 @@ function Solutions() {
                   <Icon size={20} />
 
                   <div>
+
                     <h3>
                       {item.title}
                     </h3>
@@ -604,6 +697,7 @@ function Solutions() {
                     <p>
                       {item.text}
                     </p>
+
                   </div>
 
                 </motion.div>
@@ -614,7 +708,6 @@ function Solutions() {
 
         </div>
       </section>
-
 
       {/* =====================================================
           PROJECT HIGHLIGHT
@@ -642,6 +735,7 @@ function Solutions() {
           >
 
             <div>
+
               <span className="eyebrow">
                 FROM IDEA TO IMPLEMENTATION
               </span>
@@ -656,6 +750,7 @@ function Solutions() {
                 inventory systems, workflow platforms and other
                 business applications.
               </p>
+
             </div>
 
             <Link
@@ -671,7 +766,6 @@ function Solutions() {
         </div>
       </section>
 
-
       {/* =====================================================
           FUTURE SOLUTIONS
       ===================================================== */}
@@ -680,6 +774,7 @@ function Solutions() {
         <div className="container">
 
           <div className="section-heading">
+
             <span className="eyebrow">
               OTHER SOLUTIONS
             </span>
@@ -693,14 +788,18 @@ function Solutions() {
               processes and information your organization needs
               to manage.
             </p>
-          </div>
 
+          </div>
 
           <div className="future-solution-grid">
 
             <div className="future-solution-card">
               <Database size={22} />
-              <h3>Inventory Management</h3>
+
+              <h3>
+                Inventory Management
+              </h3>
+
               <p>
                 Systems for tracking stock, movement, availability
                 and operational information.
@@ -709,7 +808,11 @@ function Solutions() {
 
             <div className="future-solution-card">
               <BarChart3 size={22} />
-              <h3>Business Dashboards</h3>
+
+              <h3>
+                Business Dashboards
+              </h3>
+
               <p>
                 Centralized dashboards that turn operational data
                 into useful business visibility.
@@ -718,7 +821,11 @@ function Solutions() {
 
             <div className="future-solution-card">
               <Headphones size={22} />
-              <h3>Support Platforms</h3>
+
+              <h3>
+                Support Platforms
+              </h3>
+
               <p>
                 Internal systems that organize requests, workflows,
                 users and service operations.
@@ -729,7 +836,6 @@ function Solutions() {
 
         </div>
       </section>
-
 
       {/* =====================================================
           CTA
