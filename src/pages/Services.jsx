@@ -151,7 +151,10 @@ function Services() {
     <>
         <Helmet>
   <title>IT Services | Brian Mumo</title>
-
+    <link
+    rel="canonical"
+    href="https://brian-it-solutions.vercel.app/services"
+    />
   <meta
     name="description"
     content="Professional IT services by Brian Mumo, including IT support, POS systems, networking, inventory systems, IT helpdesk solutions, system integration, custom software and IT maintenance."

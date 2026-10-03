@@ -57,7 +57,10 @@ function Home() {
     <>
          <Helmet>
         <title>Brian Mumo | IT Solutions • Systems • Support</title>
-
+        <link
+            rel="canonical"
+            href="https://brian-it-solutions.vercel.app/"
+        />
         <meta
           name="description"
           content="Brian Mumo provides practical IT solutions, IT support, POS systems, networking, business systems, IT helpdesk platforms, system integration and custom software."

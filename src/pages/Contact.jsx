@@ -28,7 +28,10 @@ function Contact() {
     <>
       <Helmet>
         <title>Contact Brian Mumo | IT Services</title>
-
+        <link
+        rel="canonical"
+        href="https://brian-it-solutions.vercel.app/contact"
+        />
         <meta
           name="description"
           content="Contact Brian Mumo for IT support, POS systems, networking, business systems, IT helpdesk solutions, system integration, custom software and IT maintenance."

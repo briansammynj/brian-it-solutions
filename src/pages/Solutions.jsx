@@ -116,7 +116,10 @@ function Solutions() {
     <>
       <Helmet>
         <title>IT Solutions & Systems | Brian Mumo</title>
-
+        <link
+            rel="canonical"
+            href="https://brian-it-solutions.vercel.app/solutions"
+        />
         <meta
           name="description"
           content="Explore practical IT solutions and business systems developed by Brian Mumo, including the Jaza IT Helpdesk & Ticketing System, business dashboards, support platforms, system integration and custom software."

@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Home, SearchX } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import NotFound from "./pages/NotFound";
 
 function NotFound() {
   return (

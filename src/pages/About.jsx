@@ -72,7 +72,10 @@ function About() {
     <>
     <Helmet>
   <title>About Brian Mumo | IT Professional</title>
-
+    <link
+    rel="canonical"
+    href="https://brian-it-solutions.vercel.app/about"
+    />
   <meta
     name="description"
     content="Learn about Brian Mumo, an IT professional focused on business technology, IT support, POS systems, networking, systems integration, helpdesk platforms and practical IT solutions."
