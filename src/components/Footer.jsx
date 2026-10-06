@@ -27,8 +27,8 @@ function Footer() {
 
             <p>
               Practical technology solutions for businesses —
-              from IT support and infrastructure to business
-              systems, integrations and custom software.
+              from IT support and POS systems to networking,
+              business systems, integrations and custom software.
             </p>
 
             <Link
@@ -113,30 +113,38 @@ function Footer() {
             <h3>Get in Touch</h3>
 
             {/* Email */}
+
             <a href="mailto:brianmumoit@gmail.com">
               <Mail size={15} />
+
               <span>
                 brianmumoit@gmail.com
               </span>
             </a>
 
+
             {/* Phone */}
+
             <a href="tel:+254711437854">
               <Phone size={15} />
+
               <span>
                 +254 711 437 854
               </span>
             </a>
 
+
             {/* WhatsApp */}
+
             <a
               href="https://wa.me/254711437854"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <MessageCircle size={15} />
+
               <span>
-                WhatsApp
+                Chat on WhatsApp
               </span>
             </a>
 
@@ -152,7 +160,8 @@ function Footer() {
         <div className="footer-bottom">
 
           <p>
-            © {currentYear} Brian Mumo. All rights reserved.
+            © {currentYear} Brian Mumo IT Solutions.
+            All rights reserved.
           </p>
 
           <p>

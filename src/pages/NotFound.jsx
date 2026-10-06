@@ -7,10 +7,16 @@ function NotFound() {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | Brian Mumo</title>
+        <title>Page Not Found | Brian Mumo IT Solutions</title>
+
         <meta
           name="description"
-          content="The page you're looking for could not be found."
+          content="The page you're looking for could not be found. Return to Brian Mumo IT Solutions or request an IT service."
+        />
+
+        <meta
+          name="robots"
+          content="noindex, follow"
         />
       </Helmet>
 
@@ -22,7 +28,10 @@ function NotFound() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="not-found-icon">
+            <div
+              className="not-found-icon"
+              aria-hidden="true"
+            >
               <SearchX size={30} />
             </div>
 
@@ -31,25 +40,48 @@ function NotFound() {
             <h1>Page not found.</h1>
 
             <p>
-              The page you're looking for doesn't exist or may have
-              been moved. Let's get you back on track.
+              The page you're looking for doesn't exist or may
+              have been moved. Let's get you back on track.
             </p>
 
             <div className="not-found-actions">
-              <Link to="/" className="btn btn-primary">
-                <Home size={17} />
-                Back to Home
+              <Link
+                to="/"
+                className="btn btn-primary"
+              >
+                <Home
+                  size={17}
+                  aria-hidden="true"
+                />
+
+                <span>Back to Home</span>
               </Link>
 
-              <Link to="/contact" className="btn btn-secondary">
-                Request a Service
-                <ArrowRight size={17} />
+              <Link
+                to="/contact"
+                className="btn btn-secondary"
+              >
+                <span>Request a Service</span>
+
+                <ArrowRight
+                  size={17}
+                  aria-hidden="true"
+                />
               </Link>
             </div>
 
-            <Link to="/" className="not-found-back">
-              <ArrowLeft size={15} />
-              Return to Brian Mumo IT Solutions
+            <Link
+              to="/"
+              className="not-found-back"
+            >
+              <ArrowLeft
+                size={15}
+                aria-hidden="true"
+              />
+
+              <span>
+                Return to Brian Mumo IT Solutions
+              </span>
             </Link>
           </motion.div>
         </div>

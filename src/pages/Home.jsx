@@ -55,12 +55,14 @@ const strengths = [
 function Home() {
   return (
     <>
-         <Helmet>
+      <Helmet>
         <title>Brian Mumo | IT Solutions • Systems • Support</title>
+
         <link
-            rel="canonical"
-            href="https://brian-it-solutions.vercel.app/"
+          rel="canonical"
+          href="https://brian-it-solutions.vercel.app/"
         />
+
         <meta
           name="description"
           content="Brian Mumo provides practical IT solutions, IT support, POS systems, networking, business systems, IT helpdesk platforms, system integration and custom software."
@@ -93,7 +95,6 @@ function Home() {
 
       <section className="home-hero">
         <div className="container">
-
           <div className="hero-grid">
 
             <motion.div
@@ -102,7 +103,6 @@ function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-
               <span className="eyebrow">
                 IT SOLUTIONS • SYSTEMS • SUPPORT
               </span>
@@ -113,14 +113,13 @@ function Home() {
               </h1>
 
               <p>
-                I help businesses implement, support and integrate
-                reliable technology — from POS and inventory systems
-                to IT helpdesk platforms, networking and custom
-                software.
+                I help businesses implement, support and improve the
+                technology they depend on — from POS and inventory
+                systems to IT helpdesk platforms, networking and
+                custom business software.
               </p>
 
               <div className="hero-actions">
-
                 <Link
                   to="/contact"
                   className="btn btn-primary"
@@ -135,11 +134,9 @@ function Home() {
                 >
                   Explore Solutions
                 </Link>
-
               </div>
 
               <div className="hero-trust">
-
                 <div>
                   <CheckCircle2 size={17} />
                   <span>Practical solutions</span>
@@ -154,11 +151,8 @@ function Home() {
                   <CheckCircle2 size={17} />
                   <span>Ongoing support</span>
                 </div>
-
               </div>
-
             </motion.div>
-
 
             {/* =================================================
                 HERO VISUAL
@@ -179,11 +173,9 @@ function Home() {
                 delay: 0.15,
               }}
             >
-
               <div className="hero-dashboard">
 
                 <div className="hero-dashboard-header">
-
                   <div>
                     <span>IT OPERATIONS</span>
                     <strong>Business Technology Overview</strong>
@@ -193,81 +185,67 @@ function Home() {
                     <span></span>
                     Systems Active
                   </div>
-
                 </div>
-
 
                 <div className="hero-dashboard-grid">
 
                   <div className="hero-dashboard-card">
-
                     <div className="hero-card-icon">
                       <Server size={18} />
                     </div>
 
                     <span>POS Systems</span>
 
-                    <strong>Operational</strong>
+                    <strong>Supported</strong>
 
                     <small>
-                      24 terminals
+                      Installation & support
                     </small>
-
                   </div>
 
-
                   <div className="hero-dashboard-card">
-
                     <div className="hero-card-icon">
                       <Network size={18} />
                     </div>
 
-                    <span>Network</span>
+                    <span>Networking</span>
 
-                    <strong>Connected</strong>
+                    <strong>Configured</strong>
 
                     <small>
-                      Infrastructure online
+                      Reliable connectivity
                     </small>
-
                   </div>
 
-
                   <div className="hero-dashboard-card">
-
                     <div className="hero-card-icon">
                       <Package size={18} />
                     </div>
 
                     <span>Inventory</span>
 
-                    <strong>Synced</strong>
+                    <strong>Integrated</strong>
 
                     <small>
-                      Business systems
+                      Business system support
                     </small>
-
                   </div>
 
-
                   <div className="hero-dashboard-card">
-
                     <div className="hero-card-icon">
                       <Headphones size={18} />
                     </div>
 
                     <span>IT Support</span>
 
-                    <strong>12 Open</strong>
+                    <strong>Available</strong>
 
                     <small>
-                      Tickets being handled
+                      Technical assistance
                     </small>
-
                   </div>
 
                 </div>
-
 
                 <div className="hero-dashboard-footer">
 
@@ -287,33 +265,30 @@ function Home() {
                   </div>
 
                 </div>
-
               </div>
-
 
               <div className="hero-floating-card hero-floating-top">
                 <CheckCircle2 size={18} />
+
                 <div>
                   <strong>Reliable IT</strong>
                   <span>Built for operations</span>
                 </div>
               </div>
 
-
               <div className="hero-floating-card hero-floating-bottom">
                 <Settings size={18} />
+
                 <div>
                   <strong>Systems & Support</strong>
                   <span>End-to-end technology</span>
                 </div>
               </div>
-
             </motion.div>
 
           </div>
         </div>
       </section>
-
 
       {/* =====================================================
           CAPABILITY STRIP
@@ -321,7 +296,6 @@ function Home() {
 
       <section className="capability-strip">
         <div className="container">
-
           <div className="capability-strip-inner">
 
             <span>POS SYSTEMS</span>
@@ -332,10 +306,8 @@ function Home() {
             <span>CUSTOM SOFTWARE</span>
 
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           SERVICES
@@ -355,13 +327,12 @@ function Home() {
             </h2>
 
             <p>
-              From day-to-day technical support to complete business
-              systems, I focus on technology that solves a specific
-              operational problem.
+              From day-to-day IT support to complete business systems,
+              I focus on practical technology that solves operational
+              problems and helps businesses work more efficiently.
             </p>
 
           </div>
-
 
           <div className="home-service-grid">
 
@@ -389,7 +360,6 @@ function Home() {
                     delay: index * 0.06,
                   }}
                 >
-
                   <div className="home-service-icon">
                     <Icon size={21} />
                   </div>
@@ -409,13 +379,11 @@ function Home() {
                     Learn more
                     <ArrowRight size={15} />
                   </Link>
-
                 </motion.div>
               );
             })}
 
           </div>
-
 
           <div className="section-action">
 
@@ -431,7 +399,6 @@ function Home() {
 
         </div>
       </section>
-
 
       {/* =====================================================
           FEATURED SOLUTION
@@ -459,7 +426,6 @@ function Home() {
                 duration: 0.6,
               }}
             >
-
               <span className="eyebrow">
                 FEATURED SOLUTION
               </span>
@@ -473,7 +439,6 @@ function Home() {
                 a multi-branch business report, assign, track and
                 resolve technology issues.
               </p>
-
 
               <div className="solution-checks">
 
@@ -499,7 +464,6 @@ function Home() {
 
               </div>
 
-
               <Link
                 to="/solutions"
                 className="btn btn-light"
@@ -507,9 +471,7 @@ function Home() {
                 Explore the Solution
                 <ArrowRight size={17} />
               </Link>
-
             </motion.div>
-
 
             <motion.div
               className="home-solution-visual"
@@ -528,10 +490,10 @@ function Home() {
                 duration: 0.6,
               }}
             >
-
               <div className="solution-mini-dashboard">
 
                 <div className="mini-dashboard-header">
+
                   <div>
                     <span>JAZA IT HELPDESK</span>
                     <strong>Support Overview</strong>
@@ -541,33 +503,32 @@ function Home() {
                     <span></span>
                     Online
                   </div>
-                </div>
 
+                </div>
 
                 <div className="mini-stat-grid">
 
                   <div>
-                    <span>Total Tickets</span>
-                    <strong>128</strong>
+                    <span>Ticketing</span>
+                    <strong>Centralized</strong>
                   </div>
 
                   <div>
-                    <span>Open</span>
-                    <strong>24</strong>
+                    <span>Branches</span>
+                    <strong>Multi-Branch</strong>
                   </div>
 
                   <div>
-                    <span>In Progress</span>
-                    <strong>17</strong>
+                    <span>Assignment</span>
+                    <strong>Role-Based</strong>
                   </div>
 
                   <div>
-                    <span>Resolved</span>
-                    <strong>87</strong>
+                    <span>Reporting</span>
+                    <strong>Dashboard</strong>
                   </div>
 
                 </div>
-
 
                 <div className="mini-ticket-list">
 
@@ -608,13 +569,17 @@ function Home() {
 
               </div>
 
+              <p className="solution-preview-note">
+                Representative interface preview — data shown is
+                for demonstration purposes.
+              </p>
+
             </motion.div>
 
           </div>
 
         </div>
       </section>
-
 
       {/* =====================================================
           WHY WORK WITH ME
@@ -652,7 +617,6 @@ function Home() {
               </Link>
 
             </div>
-
 
             <div className="home-strengths">
 
@@ -696,7 +660,6 @@ function Home() {
 
         </div>
       </section>
-
 
       {/* =====================================================
           FINAL CTA

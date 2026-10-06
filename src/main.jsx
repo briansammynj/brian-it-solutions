@@ -5,7 +5,9 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
 import "./index.css";
 
-createRoot(document.getElementById("root")).render(
+const root = document.getElementById("root");
+
+createRoot(root).render(
   <StrictMode>
     <HelmetProvider>
       <App />

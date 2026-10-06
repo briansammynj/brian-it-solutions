@@ -11,6 +11,10 @@ function Navbar() {
     setMenuOpen(false);
   };
 
+  const toggleMenu = () => {
+    setMenuOpen((current) => !current);
+  };
+
   const navClass = ({ isActive }) =>
     isActive ? "active" : undefined;
 
@@ -18,14 +22,20 @@ function Navbar() {
     <header className="site-header">
       <div className="container navbar">
 
-        {/* Brand */}
+        {/* =================================================
+            BRAND
+        ================================================= */}
+
         <Brand />
 
-        {/* Navigation */}
+
+        {/* =================================================
+            NAVIGATION
+        ================================================= */}
+
         <nav
-          className={`nav-links ${
-            menuOpen ? "open" : ""
-          }`}
+          className={`nav-links ${menuOpen ? "open" : ""}`}
+          aria-label="Main navigation"
         >
 
           <NavLink
@@ -69,23 +79,37 @@ function Navbar() {
             Contact
           </NavLink>
 
+
+          {/* Primary CTA */}
+
           <NavLink
             to="/contact"
             className="nav-cta"
             onClick={closeMenu}
           >
-            Request a Service
+            <span>Request a Service</span>
+
             <ArrowRight size={16} />
           </NavLink>
 
         </nav>
 
-        {/* Mobile menu */}
+
+        {/* =================================================
+            MOBILE MENU BUTTON
+        ================================================= */}
+
         <button
+          type="button"
           className="mobile-menu"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
+          onClick={toggleMenu}
+          aria-label={
+            menuOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
+          aria-controls="main-navigation"
         >
           {menuOpen ? (
             <X size={24} />

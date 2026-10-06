@@ -21,7 +21,7 @@ const features = [
     icon: LockKeyhole,
     title: "Role-Based Access",
     description:
-      "Different access levels for administrators, IT officers and branch users.",
+      "Different access levels for administrators, IT officers and branch users, with each role seeing the functions relevant to its responsibilities.",
   },
   {
     icon: GitBranch,
@@ -33,25 +33,25 @@ const features = [
     icon: ClipboardList,
     title: "Ticket Management",
     description:
-      "Create, assign, track and resolve IT issues through a centralized workflow.",
+      "Create, assign, track and resolve IT issues through a structured support workflow.",
   },
   {
     icon: Users,
     title: "IT Officer Assignment",
     description:
-      "Tickets can be assigned to specific IT officers for accountability and follow-up.",
+      "Tickets can be assigned to specific IT officers for accountability, ownership and follow-up.",
   },
   {
     icon: MessageSquare,
     title: "Comments & Resolution",
     description:
-      "Support teams can communicate through ticket comments and record resolutions.",
+      "Support teams can communicate through ticket comments and record the resolution of completed issues.",
   },
   {
     icon: BarChart3,
     title: "Operational Visibility",
     description:
-      "Dashboards provide visibility into ticket status, priorities and IT workload.",
+      "Dashboards provide visibility into ticket status, priorities, assignments and support activity.",
   },
 ];
 
@@ -79,12 +79,12 @@ const capabilities = [
   {
     icon: Headphones,
     title: "IT Support Workflow",
-    text: "Structure the process from issue reporting through resolution.",
+    text: "Structure the process from issue reporting through assignment and resolution.",
   },
   {
     icon: Database,
     title: "Centralized Data",
-    text: "Keep tickets, users, assignments and resolutions in one system.",
+    text: "Keep tickets, users, assignments, comments and resolutions in one system.",
   },
 ];
 
@@ -116,10 +116,12 @@ function Solutions() {
     <>
       <Helmet>
         <title>IT Solutions & Systems | Brian Mumo</title>
+
         <link
-            rel="canonical"
-            href="https://brian-it-solutions.vercel.app/solutions"
+          rel="canonical"
+          href="https://brian-it-solutions.vercel.app/solutions"
         />
+
         <meta
           name="description"
           content="Explore practical IT solutions and business systems developed by Brian Mumo, including the Jaza IT Helpdesk & Ticketing System, business dashboards, support platforms, system integration and custom software."
@@ -191,9 +193,8 @@ function Solutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-
               <span className="eyebrow">
-                FEATURED SOLUTION
+                FEATURED PROJECT
               </span>
 
               <h2>
@@ -201,9 +202,9 @@ function Solutions() {
               </h2>
 
               <p className="solution-lead">
-                A centralized IT support platform designed to help
-                a multi-branch business report, assign, track and
-                resolve technology issues.
+                A centralized IT support platform designed for a
+                multi-branch business to report, assign, track and
+                resolve technology issues through a structured workflow.
               </p>
 
               <div className="solution-meta">
@@ -220,10 +221,11 @@ function Solutions() {
                 Discuss a Similar System
                 <ArrowRight size={17} />
               </Link>
-
             </motion.div>
 
-            {/* Dashboard Preview */}
+            {/* =================================================
+                DASHBOARD PREVIEW
+            ================================================= */}
 
             <motion.div
               className="solution-dashboard"
@@ -232,7 +234,6 @@ function Solutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-
               <div className="mock-browser">
 
                 <div className="mock-browser-bar">
@@ -274,6 +275,7 @@ function Solutions() {
                   <div className="mock-main">
 
                     <div className="mock-heading">
+
                       <div>
                         <strong>IT Dashboard</strong>
                         <small>Support overview</small>
@@ -282,6 +284,7 @@ function Solutions() {
                       <div className="mock-user">
                         Admin
                       </div>
+
                     </div>
 
                     <div className="mock-stats">
@@ -317,26 +320,36 @@ function Solutions() {
                       </div>
 
                       <div className="mock-table-row">
-                        <span>Ticket #</span>
+                        <span>POS issue</span>
+
                         <span className="mock-high">
                           High
                         </span>
+
                         <span className="mock-progress">
                           In Progress
                         </span>
                       </div>
 
                       <div className="mock-table-row">
-                        <span>Ticket #</span>
-                        <span>Medium</span>
+                        <span>Network issue</span>
+
+                        <span>
+                          Medium
+                        </span>
+
                         <span className="mock-resolved">
                           Resolved
                         </span>
                       </div>
 
                       <div className="mock-table-row">
-                        <span>Ticket #</span>
-                        <span>Critical</span>
+                        <span>Printer issue</span>
+
+                        <span>
+                          Critical
+                        </span>
+
                         <span className="mock-open">
                           Open
                         </span>

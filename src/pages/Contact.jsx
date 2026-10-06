@@ -27,11 +27,13 @@ function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Brian Mumo | IT Services</title>
+        <title>Contact Brian Mumo | IT Solutions & Support</title>
+
         <link
-        rel="canonical"
-        href="https://brian-it-solutions.vercel.app/contact"
+          rel="canonical"
+          href="https://brian-it-solutions.vercel.app/contact"
         />
+
         <meta
           name="description"
           content="Contact Brian Mumo for IT support, POS systems, networking, business systems, IT helpdesk solutions, system integration, custom software and IT maintenance."
@@ -39,22 +41,32 @@ function Contact() {
 
         <meta
           name="keywords"
-          content="contact IT support Kenya, IT services Kenya, POS support Kenya, networking support Kenya, IT consultant Kenya, Brian Mumo"
+          content="Brian Mumo, IT support Kenya, IT solutions Kenya, POS support Kenya, networking support Kenya, IT consultant Kenya, business systems Kenya, custom software Kenya"
         />
 
         <meta
           property="og:title"
-          content="Contact Brian Mumo | IT Services"
+          content="Contact Brian Mumo | IT Solutions & Support"
         />
 
         <meta
           property="og:description"
-          content="Request IT support, POS solutions, networking, business systems, system integration or custom software services from Brian Mumo."
+          content="Get in touch with Brian Mumo for practical IT support, POS systems, networking, business systems, system integration and custom software solutions."
         />
 
         <meta
           property="og:type"
           content="website"
+        />
+
+        <meta
+          property="og:url"
+          content="https://brian-it-solutions.vercel.app/contact"
+        />
+
+        <meta
+          property="og:image"
+          content="https://brian-it-solutions.vercel.app/og-image.jpg"
         />
       </Helmet>
 
@@ -89,7 +101,7 @@ function Contact() {
             <p>
               Whether you need IT support, a POS solution,
               networking, a business system or custom software,
-              tell me what you need and let's discuss a practical
+              tell me what you need and let's work out a practical
               solution.
             </p>
           </motion.div>
@@ -134,9 +146,9 @@ function Contact() {
               </h2>
 
               <p>
-                You don't need to have the technical details
+                You don't need to have all the technical details
                 figured out before getting in touch. Explain the
-                business problem or technology issue and we can
+                business problem, system or project and we can
                 work through the requirements together.
               </p>
 
@@ -154,6 +166,7 @@ function Contact() {
 
                   <div>
                     <span>Email</span>
+
                     <strong>
                       brianmumoit@gmail.com
                     </strong>
@@ -172,6 +185,7 @@ function Contact() {
 
                   <div>
                     <span>Phone</span>
+
                     <strong>
                       +254 711 437 854
                     </strong>
@@ -192,6 +206,7 @@ function Contact() {
 
                   <div>
                     <span>WhatsApp</span>
+
                     <strong>
                       Chat on WhatsApp
                     </strong>
@@ -204,8 +219,9 @@ function Contact() {
                 <CheckCircle2 size={18} />
 
                 <p>
-                  I focus on practical technology solutions
-                  that fit the way your business actually works.
+                  Practical technology solutions designed around
+                  your business needs, existing systems and
+                  operational requirements.
                 </p>
               </div>
             </motion.div>
@@ -231,7 +247,6 @@ function Contact() {
                 duration: 0.6,
               }}
             >
-
               {state.succeeded ? (
                 <div className="contact-success">
 
@@ -245,8 +260,8 @@ function Contact() {
 
                   <p>
                     Thank you for getting in touch. Your service
-                    request has been received and I'll get back
-                    to you as soon as possible.
+                    request has been received. I'll review your
+                    request and get back to you as soon as possible.
                   </p>
 
                   <button
@@ -270,9 +285,9 @@ function Contact() {
                     </h2>
 
                     <p>
-                      Share a few details about your business
-                      and request so I can better understand how
-                      to help.
+                      Share a few details about your business,
+                      technology needs or current issue so I can
+                      better understand how to help.
                     </p>
                   </div>
 
@@ -290,6 +305,7 @@ function Contact() {
                         name="name"
                         type="text"
                         placeholder="John Doe"
+                        autoComplete="name"
                         required
                       />
                     </div>
@@ -304,6 +320,7 @@ function Contact() {
                         name="company"
                         type="text"
                         placeholder="Company name"
+                        autoComplete="organization"
                       />
                     </div>
 
@@ -323,6 +340,7 @@ function Contact() {
                         name="email"
                         type="email"
                         placeholder="you@company.com"
+                        autoComplete="email"
                         required
                       />
                     </div>
@@ -337,6 +355,7 @@ function Contact() {
                         name="phone"
                         type="tel"
                         placeholder="+254 ..."
+                        autoComplete="tel"
                       />
                     </div>
 
@@ -356,6 +375,7 @@ function Contact() {
                         name="location"
                         type="text"
                         placeholder="e.g. Nairobi"
+                        autoComplete="address-level2"
                       />
                     </div>
 
@@ -368,8 +388,9 @@ function Contact() {
                         id="service"
                         name="service"
                         required
+                        defaultValue=""
                       >
-                        <option value="">
+                        <option value="" disabled>
                           Select a service
                         </option>
 
@@ -398,8 +419,9 @@ function Contact() {
                       <select
                         id="urgency"
                         name="urgency"
+                        defaultValue=""
                       >
-                        <option value="">
+                        <option value="" disabled>
                           Select urgency
                         </option>
 
@@ -429,8 +451,9 @@ function Contact() {
                       <select
                         id="preferred_contact"
                         name="preferred_contact"
+                        defaultValue=""
                       >
-                        <option value="">
+                        <option value="" disabled>
                           Select method
                         </option>
 
@@ -477,7 +500,7 @@ function Contact() {
                       <p>
                         Your request could not be submitted.
                         Please try again or contact me directly
-                        using WhatsApp, phone or email.
+                        through WhatsApp, phone or email.
                       </p>
                     </div>
                   )}
@@ -497,14 +520,12 @@ function Contact() {
                   </button>
 
                   <p className="form-disclaimer">
-                    Your information will be securely submitted
-                    through the website and used to respond to
-                    your service request.
+                    Your information will only be used to respond
+                    to your service request.
                   </p>
 
                 </form>
               )}
-
             </motion.div>
 
           </div>

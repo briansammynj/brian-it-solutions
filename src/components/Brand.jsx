@@ -5,14 +5,18 @@ function Brand({ footer = false }) {
     <Link
       to="/"
       className={`brand ${footer ? "brand-footer" : ""}`}
+      aria-label="Brian Mumo IT Solutions - Home"
     >
-      <div className="brand-mark">
+      <div className="brand-mark" aria-hidden="true">
         <span>BM</span>
       </div>
 
       <div className="brand-text">
-        <strong>Brian Mumo</strong>
-        <span>IT Solutions • Systems • Support</span>
+        <strong>Brian Mumo IT Solutions</strong>
+
+        <span>
+          IT Solutions • Systems • Support
+        </span>
       </div>
     </Link>
   );

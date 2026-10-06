@@ -7,7 +7,6 @@ import {
   Network,
   Server,
   Settings,
-  Wrench,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import profilePhoto from "../assets/brian-profile.jpg";
@@ -48,7 +47,7 @@ const approach = [
   {
     number: "01",
     title: "Understand the problem",
-    text: "I start by understanding the business process, the users involved and the actual technology problem.",
+    text: "I start by understanding the business process, the users involved and the actual technology challenge.",
   },
   {
     number: "02",
@@ -58,49 +57,62 @@ const approach = [
   {
     number: "03",
     title: "Implement with care",
-    text: "Systems are configured, deployed or developed with the goal of minimizing disruption to operations.",
+    text: "Systems are configured, deployed or developed with the goal of minimizing disruption to business operations.",
   },
   {
     number: "04",
     title: "Support after implementation",
-    text: "Technology needs ongoing attention, so support and maintenance remain part of the process.",
+    text: "Technology needs ongoing attention, so support, maintenance and continuous improvement remain part of the process.",
   },
 ];
 
 function About() {
   return (
     <>
-    <Helmet>
-  <title>About Brian Mumo | IT Professional</title>
-    <link
-    rel="canonical"
-    href="https://brian-it-solutions.vercel.app/about"
-    />
-  <meta
-    name="description"
-    content="Learn about Brian Mumo, an IT professional focused on business technology, IT support, POS systems, networking, systems integration, helpdesk platforms and practical IT solutions."
-  />
+      <Helmet>
+        <title>About Brian Mumo | IT Solutions & Systems Support</title>
 
-  <meta
-    name="keywords"
-    content="Brian Mumo, IT professional Kenya, IT support Kenya, POS support Kenya, networking, system administration, IT solutions"
-  />
+        <link
+          rel="canonical"
+          href="https://brian-it-solutions.vercel.app/about"
+        />
 
-  <meta
-    property="og:title"
-    content="About Brian Mumo | IT Professional"
-  />
+        <meta
+          name="description"
+          content="Learn about Brian Mumo, an IT solutions professional focused on IT support, POS systems, networking, business systems, helpdesk platforms, system integration and practical technology solutions."
+        />
 
-  <meta
-    property="og:description"
-    content="IT professional focused on practical business technology, IT support, POS systems, networking, systems integration and IT helpdesk solutions."
-  />
+        <meta
+          name="keywords"
+          content="Brian Mumo, IT solutions Kenya, IT support Kenya, POS support Kenya, business systems Kenya, networking Kenya, system administration, IT helpdesk, system integration"
+        />
 
-  <meta
-    property="og:type"
-    content="profile"
-  />
-</Helmet>
+        <meta
+          property="og:title"
+          content="About Brian Mumo | IT Solutions & Systems Support"
+        />
+
+        <meta
+          property="og:description"
+          content="IT solutions professional focused on practical business technology, IT support, POS systems, networking, business systems and IT helpdesk solutions."
+        />
+
+        <meta
+          property="og:type"
+          content="profile"
+        />
+
+        <meta
+          property="og:url"
+          content="https://brian-it-solutions.vercel.app/about"
+        />
+
+        <meta
+          property="og:image"
+          content="https://brian-it-solutions.vercel.app/og-image.jpg"
+        />
+      </Helmet>
+
       {/* =====================================================
           PAGE HERO
       ===================================================== */}
@@ -130,14 +142,14 @@ function About() {
             </h1>
 
             <p>
-              I work across IT support, business systems,
-              infrastructure and software to help businesses
-              solve practical technology problems.
+              I help businesses implement, support and improve
+              the technology they depend on — from POS and
+              business systems to networking, IT support and
+              custom solutions.
             </p>
           </motion.div>
         </div>
       </section>
-
 
       {/* =====================================================
           PROFILE
@@ -145,7 +157,6 @@ function About() {
 
       <section className="about-profile">
         <div className="container">
-
           <div className="about-profile-grid">
 
             {/* Profile Card */}
@@ -167,12 +178,12 @@ function About() {
                 duration: 0.6,
               }}
             >
-            <div className="about-profile-avatar">
+              <div className="about-profile-avatar">
                 <img
-                    src={profilePhoto}
-                    alt="Brian Mumo"
+                  src={profilePhoto}
+                  alt="Brian Mumo - IT Solutions Specialist"
                 />
-            </div>
+              </div>
 
               <div className="about-profile-name">
                 <h2>Brian Mumo</h2>
@@ -187,6 +198,7 @@ function About() {
               <div className="about-profile-meta">
                 <div>
                   <span>Focus</span>
+
                   <strong>
                     Business Technology
                   </strong>
@@ -194,6 +206,7 @@ function About() {
 
                 <div>
                   <span>Specialization</span>
+
                   <strong>
                     IT & Systems Support
                   </strong>
@@ -201,13 +214,13 @@ function About() {
 
                 <div>
                   <span>Approach</span>
+
                   <strong>
                     Practical & Business-Focused
                   </strong>
                 </div>
               </div>
             </motion.div>
-
 
             {/* Introduction */}
 
@@ -229,7 +242,7 @@ function About() {
               }}
             >
               <span className="eyebrow">
-                MY APPROACH
+                WHO I AM
               </span>
 
               <h2>
@@ -238,19 +251,25 @@ function About() {
               </h2>
 
               <p>
-                My work focuses on helping businesses use
-                technology more effectively. That can mean
-                troubleshooting a technical issue, supporting
-                POS systems, improving network infrastructure,
-                implementing business systems or developing a
-                solution for a specific operational need.
+                I am an IT solutions professional with practical
+                experience supporting technology in business and
+                retail environments. My work covers day-to-day
+                IT support as well as the systems, infrastructure
+                and processes that businesses rely on.
               </p>
 
               <p>
-                I believe technology should solve a real
-                problem. The goal is not simply to introduce
-                another system, but to make business operations
-                more reliable, efficient and easier to manage.
+                This includes supporting POS systems, troubleshooting
+                technical issues, maintaining network connectivity,
+                working with inventory and business systems, and
+                developing solutions that improve how teams work.
+              </p>
+
+              <p>
+                I believe good technology should solve a real
+                business problem. The goal is not simply to add
+                another system, but to make operations more
+                reliable, efficient and easier to manage.
               </p>
 
               <Link
@@ -263,10 +282,8 @@ function About() {
             </motion.div>
 
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CAPABILITIES
@@ -287,10 +304,9 @@ function About() {
             <p>
               My experience spans day-to-day IT support as well
               as the systems and infrastructure that businesses
-              depend on.
+              depend on to operate effectively.
             </p>
           </div>
-
 
           <div className="about-capability-grid">
 
@@ -333,10 +349,8 @@ function About() {
             })}
 
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           EXPERIENCE
@@ -361,8 +375,8 @@ function About() {
                 Working in a retail environment has provided
                 practical exposure to technology that directly
                 affects daily business operations. Systems need
-                to work, issues need to be resolved quickly and
-                downtime can have a direct operational impact.
+                to work, users need timely support and technical
+                issues need to be resolved with minimal disruption.
               </p>
 
               <p>
@@ -371,8 +385,14 @@ function About() {
                 implement the right solution and make sure the
                 system remains reliable.
               </p>
-            </div>
 
+              <p>
+                It has also provided experience working with
+                technology from an operational perspective, where
+                reliability, availability and user experience
+                matter every day.
+              </p>
+            </div>
 
             <div className="about-experience-list">
 
@@ -405,12 +425,9 @@ function About() {
               ))}
 
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           APPROACH
@@ -434,7 +451,6 @@ function About() {
               implementation.
             </p>
           </div>
-
 
           <div className="about-approach-grid">
 
@@ -473,10 +489,8 @@ function About() {
             ))}
 
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CTA
@@ -513,7 +527,8 @@ function About() {
 
               <p>
                 Tell me what you're trying to achieve and
-                let's explore a practical technology solution.
+                let's explore a practical technology solution
+                for your business.
               </p>
             </div>
 
