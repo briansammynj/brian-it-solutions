@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import HeroVisual from "../components/HeroVisual";
 import Reveal from "../components/Reveal";
-import JazaShowcase from "../components/JazaShowcase";
 
 import {
   ArrowRight,
