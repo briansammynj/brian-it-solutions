@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import HeroVisual from "../components/HeroVisual";
+import Reveal from "../components/Reveal";
+import JazaShowcase from "../components/JazaShowcase";
+
 import {
   ArrowRight,
   CheckCircle2,
@@ -10,45 +14,46 @@ import {
   Settings,
   Wrench,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
 
 const services = [
   {
     icon: Server,
     title: "POS Systems",
-    text: "Installation, configuration, troubleshooting and support for business POS environments.",
+    text: "Installation, configuration, troubleshooting and support for reliable business POS environments.",
   },
   {
     icon: Headphones,
     title: "IT Support",
-    text: "Practical technical support that helps businesses keep their systems running.",
+    text: "Practical technical support that keeps your business systems running and minimizes downtime.",
   },
   {
     icon: Network,
     title: "Networking",
-    text: "Network, Wi-Fi and connectivity solutions for reliable business operations.",
+    text: "Network, Wi-Fi and connectivity solutions designed for dependable day-to-day operations.",
   },
   {
     icon: Package,
     title: "Business Systems",
-    text: "Inventory and operational systems designed around how your business works.",
+    text: "Inventory and operational systems built around the way your business actually works.",
   },
   {
     icon: Settings,
     title: "IT Helpdesk",
-    text: "Centralized ticketing systems for managing IT issues and support workflows.",
+    text: "Centralized ticketing systems for managing IT issues, assignments and support workflows.",
   },
   {
     icon: Wrench,
     title: "Custom Solutions",
-    text: "Purpose-built software and integrations for specific business requirements.",
+    text: "Purpose-built software, integrations and automation for specific business requirements.",
   },
 ];
 
 const strengths = [
   "Business-focused IT solutions",
   "Practical implementation",
-  "Ongoing technical support",
+  "Reliable technical support",
   "Systems and process improvement",
 ];
 
@@ -56,7 +61,9 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Brian Mumo | IT Solutions • Systems • Support</title>
+        <title>
+          Brian Mumo IT Solutions | IT Support, POS & Business Systems
+        </title>
 
         <link
           rel="canonical"
@@ -65,22 +72,22 @@ function Home() {
 
         <meta
           name="description"
-          content="Brian Mumo provides practical IT solutions, IT support, POS systems, networking, business systems, IT helpdesk platforms, system integration and custom software."
+          content="Brian Mumo IT Solutions provides practical IT support, POS systems, networking, business systems, IT helpdesk platforms, system integration and custom software for businesses."
         />
 
         <meta
           name="keywords"
-          content="IT support Kenya, IT solutions Kenya, POS systems Kenya, networking Kenya, IT helpdesk, system integration, custom software, Brian Mumo"
+          content="IT support Kenya, IT solutions Kenya, POS systems Kenya, POS support Kenya, networking Kenya, IT helpdesk, business systems, system integration, custom software, Brian Mumo IT Solutions"
         />
 
         <meta
           property="og:title"
-          content="Brian Mumo | IT Solutions • Systems • Support"
+          content="Brian Mumo IT Solutions | IT Support, POS & Business Systems"
         />
 
         <meta
           property="og:description"
-          content="Practical IT solutions for businesses — IT support, POS systems, networking, business systems, helpdesk platforms, integrations and custom software."
+          content="Practical technology solutions for businesses — from IT support and POS systems to networking, business systems, helpdesk platforms and custom software."
         />
 
         <meta
@@ -99,27 +106,95 @@ function Home() {
 
             <motion.div
               className="hero-content"
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.75,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
-              <span className="eyebrow">
+
+              <motion.span
+                className="eyebrow"
+                initial={{
+                  opacity: 0,
+                  y: 12,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.1,
+                }}
+              >
                 IT SOLUTIONS • SYSTEMS • SUPPORT
-              </span>
+              </motion.span>
 
-              <h1>
-                Technology solutions
-                <span> built around your business.</span>
-              </h1>
+              <motion.h1
+                initial={{
+                  opacity: 0,
+                  y: 18,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.18,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                Technology that works
+                <span>
+                  {" "}for your business.
+                </span>
+              </motion.h1>
 
-              <p>
-                I help businesses implement, support and improve the
-                technology they depend on — from POS and inventory
-                systems to IT helpdesk platforms, networking and
-                custom business software.
-              </p>
+              <motion.p
+                initial={{
+                  opacity: 0,
+                  y: 18,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.65,
+                  delay: 0.3,
+                }}
+              >
+                I help businesses implement, support and improve
+                the technology they rely on — from POS and inventory
+                systems to IT helpdesk platforms, networking,
+                integrations and custom business software.
+              </motion.p>
 
-              <div className="hero-actions">
+              <motion.div
+                className="hero-actions"
+                initial={{
+                  opacity: 0,
+                  y: 15,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.55,
+                  delay: 0.42,
+                }}
+              >
+
                 <Link
                   to="/contact"
                   className="btn btn-primary"
@@ -129,14 +204,30 @@ function Home() {
                 </Link>
 
                 <Link
-                  to="/solutions"
+                  to="/services"
                   className="btn btn-secondary"
                 >
-                  Explore Solutions
+                  Explore Services
                 </Link>
-              </div>
 
-              <div className="hero-trust">
+              </motion.div>
+
+              <motion.div
+                className="hero-trust"
+                initial={{
+                  opacity: 0,
+                  y: 12,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.55,
+                  delay: 0.52,
+                }}
+              >
+
                 <div>
                   <CheckCircle2 size={17} />
                   <span>Practical solutions</span>
@@ -151,7 +242,9 @@ function Home() {
                   <CheckCircle2 size={17} />
                   <span>Ongoing support</span>
                 </div>
-              </div>
+
+              </motion.div>
+
             </motion.div>
 
             {/* =================================================
@@ -159,131 +252,24 @@ function Home() {
             ================================================= */}
 
             <motion.div
-              className="hero-visual"
+              className="hero-visual-wrapper"
               initial={{
                 opacity: 0,
-                x: 35,
+                x: 45,
+                scale: 0.96,
               }}
               animate={{
                 opacity: 1,
                 x: 0,
+                scale: 1,
               }}
               transition={{
-                duration: 0.8,
+                duration: 0.9,
                 delay: 0.15,
+                ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <div className="hero-dashboard">
-
-                <div className="hero-dashboard-header">
-                  <div>
-                    <span>IT OPERATIONS</span>
-                    <strong>Business Technology Overview</strong>
-                  </div>
-
-                  <div className="hero-status">
-                    <span></span>
-                    Systems Active
-                  </div>
-                </div>
-
-                <div className="hero-dashboard-grid">
-
-                  <div className="hero-dashboard-card">
-                    <div className="hero-card-icon">
-                      <Server size={18} />
-                    </div>
-
-                    <span>POS Systems</span>
-
-                    <strong>Supported</strong>
-
-                    <small>
-                      Installation & support
-                    </small>
-                  </div>
-
-                  <div className="hero-dashboard-card">
-                    <div className="hero-card-icon">
-                      <Network size={18} />
-                    </div>
-
-                    <span>Networking</span>
-
-                    <strong>Configured</strong>
-
-                    <small>
-                      Reliable connectivity
-                    </small>
-                  </div>
-
-                  <div className="hero-dashboard-card">
-                    <div className="hero-card-icon">
-                      <Package size={18} />
-                    </div>
-
-                    <span>Inventory</span>
-
-                    <strong>Integrated</strong>
-
-                    <small>
-                      Business system support
-                    </small>
-                  </div>
-
-                  <div className="hero-dashboard-card">
-                    <div className="hero-card-icon">
-                      <Headphones size={18} />
-                    </div>
-
-                    <span>IT Support</span>
-
-                    <strong>Available</strong>
-
-                    <small>
-                      Technical assistance
-                    </small>
-                  </div>
-
-                </div>
-
-                <div className="hero-dashboard-footer">
-
-                  <div>
-                    <span>Technology</span>
-                    <strong>Connected</strong>
-                  </div>
-
-                  <div>
-                    <span>Support</span>
-                    <strong>Active</strong>
-                  </div>
-
-                  <div>
-                    <span>Systems</span>
-                    <strong>Monitored</strong>
-                  </div>
-
-                </div>
-              </div>
-
-              <div className="hero-floating-card hero-floating-top">
-                <CheckCircle2 size={18} />
-
-                <div>
-                  <strong>Reliable IT</strong>
-                  <span>Built for operations</span>
-                </div>
-              </div>
-
-              <div className="hero-floating-card hero-floating-bottom">
-                <Settings size={18} />
-
-                <div>
-                  <strong>Systems & Support</strong>
-                  <span>End-to-end technology</span>
-                </div>
-              </div>
+              <HeroVisual />
             </motion.div>
 
           </div>
@@ -296,7 +282,25 @@ function Home() {
 
       <section className="capability-strip">
         <div className="container">
-          <div className="capability-strip-inner">
+
+          <motion.div
+            className="capability-strip-inner"
+            initial={{
+              opacity: 0,
+              y: 12,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.4,
+            }}
+            transition={{
+              duration: 0.55,
+            }}
+          >
 
             <span>POS SYSTEMS</span>
             <span>IT SUPPORT</span>
@@ -305,7 +309,8 @@ function Home() {
             <span>HELPDESK SYSTEMS</span>
             <span>CUSTOM SOFTWARE</span>
 
-          </div>
+          </motion.div>
+
         </div>
       </section>
 
@@ -316,23 +321,26 @@ function Home() {
       <section className="home-services">
         <div className="container">
 
-          <div className="section-heading home-section-heading">
+          <Reveal>
+            <div className="section-heading home-section-heading">
 
-            <span className="eyebrow">
-              WHAT I DO
-            </span>
+              <span className="eyebrow">
+                WHAT I DO
+              </span>
 
-            <h2>
-              Practical technology services for real business needs.
-            </h2>
+              <h2>
+                Technology services built around real business needs.
+              </h2>
 
-            <p>
-              From day-to-day IT support to complete business systems,
-              I focus on practical technology that solves operational
-              problems and helps businesses work more efficiently.
-            </p>
+              <p>
+                From day-to-day IT support to complete business
+                systems, I focus on practical technology that solves
+                operational problems, improves efficiency and keeps
+                businesses moving.
+              </p>
 
-          </div>
+            </div>
+          </Reveal>
 
           <div className="home-service-grid">
 
@@ -345,7 +353,7 @@ function Home() {
                   key={service.title}
                   initial={{
                     opacity: 0,
-                    y: 20,
+                    y: 28,
                   }}
                   whileInView={{
                     opacity: 1,
@@ -353,16 +361,30 @@ function Home() {
                   }}
                   viewport={{
                     once: true,
-                    margin: "-50px",
+                    amount: 0.15,
                   }}
                   transition={{
-                    duration: 0.45,
-                    delay: index * 0.06,
+                    duration: 0.55,
+                    delay: index * 0.07,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  whileHover={{
+                    y: -7,
                   }}
                 >
-                  <div className="home-service-icon">
+
+                  <motion.div
+                    className="home-service-icon"
+                    whileHover={{
+                      scale: 1.08,
+                      rotate: 2,
+                    }}
+                    transition={{
+                      duration: 0.25,
+                    }}
+                  >
                     <Icon size={21} />
-                  </div>
+                  </motion.div>
 
                   <h3>
                     {service.title}
@@ -379,23 +401,29 @@ function Home() {
                     Learn more
                     <ArrowRight size={15} />
                   </Link>
+
                 </motion.div>
               );
             })}
 
           </div>
 
-          <div className="section-action">
+          <Reveal
+            direction="up"
+            delay={0.1}
+          >
+            <div className="section-action">
 
-            <Link
-              to="/services"
-              className="btn btn-secondary"
-            >
-              View All Services
-              <ArrowRight size={16} />
-            </Link>
+              <Link
+                to="/services"
+                className="btn btn-secondary"
+              >
+                View All Services
+                <ArrowRight size={16} />
+              </Link>
 
-          </div>
+            </div>
+          </Reveal>
 
         </div>
       </section>
@@ -409,172 +437,255 @@ function Home() {
 
           <div className="home-solution-grid">
 
-            <motion.div
-              className="home-solution-content"
-              initial={{
-                opacity: 0,
-                x: -25,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
-            >
-              <span className="eyebrow">
-                FEATURED SOLUTION
-              </span>
+            <Reveal direction="left">
+              <div className="home-solution-content">
 
-              <h2>
-                Jaza IT Helpdesk & Ticketing System
-              </h2>
+                <span className="eyebrow">
+                  FEATURED SOLUTION
+                </span>
 
-              <p>
-                A centralized IT support platform built to help
-                a multi-branch business report, assign, track and
-                resolve technology issues.
-              </p>
+                <h2>
+                  Jaza IT Helpdesk & Ticketing System
+                </h2>
 
-              <div className="solution-checks">
+                <p>
+                  A centralized IT support platform built to help
+                  a multi-branch business report, assign, track and
+                  resolve technology issues efficiently.
+                </p>
 
-                <div>
-                  <CheckCircle2 size={17} />
-                  <span>Multi-branch ticket management</span>
+                <div className="solution-checks">
+
+                  <motion.div whileHover={{ x: 4 }}>
+                    <CheckCircle2 size={17} />
+                    <span>
+                      Multi-branch ticket management
+                    </span>
+                  </motion.div>
+
+                  <motion.div whileHover={{ x: 4 }}>
+                    <CheckCircle2 size={17} />
+                    <span>
+                      Role-based access control
+                    </span>
+                  </motion.div>
+
+                  <motion.div whileHover={{ x: 4 }}>
+                    <CheckCircle2 size={17} />
+                    <span>
+                      Ticket assignment and tracking
+                    </span>
+                  </motion.div>
+
+                  <motion.div whileHover={{ x: 4 }}>
+                    <CheckCircle2 size={17} />
+                    <span>
+                      Operational dashboards
+                    </span>
+                  </motion.div>
+
                 </div>
 
-                <div>
-                  <CheckCircle2 size={17} />
-                  <span>Role-based access control</span>
-                </div>
-
-                <div>
-                  <CheckCircle2 size={17} />
-                  <span>Ticket assignment and tracking</span>
-                </div>
-
-                <div>
-                  <CheckCircle2 size={17} />
-                  <span>Operational dashboards</span>
-                </div>
+                <Link
+                  to="/solutions"
+                  className="btn btn-light"
+                >
+                  Explore the Solution
+                  <ArrowRight size={17} />
+                </Link>
 
               </div>
+            </Reveal>
 
-              <Link
-                to="/solutions"
-                className="btn btn-light"
-              >
-                Explore the Solution
-                <ArrowRight size={17} />
-              </Link>
-            </motion.div>
-
-            <motion.div
-              className="home-solution-visual"
-              initial={{
-                opacity: 0,
-                x: 25,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
+            <Reveal
+              direction="right"
+              delay={0.1}
             >
-              <div className="solution-mini-dashboard">
+              <div className="home-solution-visual">
 
-                <div className="mini-dashboard-header">
+                <motion.div
+                  className="solution-mini-dashboard"
+                  whileHover={{
+                    y: -5,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
 
-                  <div>
-                    <span>JAZA IT HELPDESK</span>
-                    <strong>Support Overview</strong>
-                  </div>
+                  <div className="mini-dashboard-header">
 
-                  <div className="mini-online">
-                    <span></span>
-                    Online
-                  </div>
-
-                </div>
-
-                <div className="mini-stat-grid">
-
-                  <div>
-                    <span>Ticketing</span>
-                    <strong>Centralized</strong>
-                  </div>
-
-                  <div>
-                    <span>Branches</span>
-                    <strong>Multi-Branch</strong>
-                  </div>
-
-                  <div>
-                    <span>Assignment</span>
-                    <strong>Role-Based</strong>
-                  </div>
-
-                  <div>
-                    <span>Reporting</span>
-                    <strong>Dashboard</strong>
-                  </div>
-
-                </div>
-
-                <div className="mini-ticket-list">
-
-                  <div className="mini-ticket">
                     <div>
-                      <strong>POS terminal issue</strong>
-                      <span>JZA-1042</span>
+                      <span>
+                        JAZA IT HELPDESK
+                      </span>
+
+                      <strong>
+                        Support Overview
+                      </strong>
                     </div>
 
-                    <span className="mini-ticket-status">
-                      In Progress
-                    </span>
-                  </div>
-
-                  <div className="mini-ticket">
-                    <div>
-                      <strong>Network connectivity</strong>
-                      <span>JZA-1041</span>
+                    <div className="mini-online">
+                      <span></span>
+                      Online
                     </div>
 
-                    <span className="mini-ticket-status resolved">
-                      Resolved
-                    </span>
                   </div>
 
-                  <div className="mini-ticket">
-                    <div>
-                      <strong>Printer not responding</strong>
-                      <span>JZA-1040</span>
-                    </div>
+                  <div className="mini-stat-grid">
 
-                    <span className="mini-ticket-status open">
-                      Open
-                    </span>
+                    <motion.div whileHover={{ y: -3 }}>
+                      <span>Ticketing</span>
+                      <strong>Centralized</strong>
+                    </motion.div>
+
+                    <motion.div whileHover={{ y: -3 }}>
+                      <span>Branches</span>
+                      <strong>Multi-Branch</strong>
+                    </motion.div>
+
+                    <motion.div whileHover={{ y: -3 }}>
+                      <span>Assignment</span>
+                      <strong>Role-Based</strong>
+                    </motion.div>
+
+                    <motion.div whileHover={{ y: -3 }}>
+                      <span>Reporting</span>
+                      <strong>Dashboard</strong>
+                    </motion.div>
+
                   </div>
 
-                </div>
+                  <div className="mini-ticket-list">
+
+                    <motion.div
+                      className="mini-ticket"
+                      initial={{
+                        opacity: 0,
+                        x: -10,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        x: 0,
+                      }}
+                      viewport={{
+                        once: true,
+                      }}
+                      transition={{
+                        delay: 0.25,
+                      }}
+                    >
+
+                      <div>
+                        <strong>
+                          POS terminal issue
+                        </strong>
+
+                        <span>
+                          JZA-1042
+                        </span>
+                      </div>
+
+                      <span className="mini-ticket-status">
+                        In Progress
+                      </span>
+
+                    </motion.div>
+
+                    <motion.div
+                      className="mini-ticket"
+                      initial={{
+                        opacity: 0,
+                        x: -10,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        x: 0,
+                      }}
+                      viewport={{
+                        once: true,
+                      }}
+                      transition={{
+                        delay: 0.35,
+                      }}
+                    >
+
+                      <div>
+                        <strong>
+                          Network connectivity
+                        </strong>
+
+                        <span>
+                          JZA-1041
+                        </span>
+                      </div>
+
+                      <span className="mini-ticket-status resolved">
+                        Resolved
+                      </span>
+
+                    </motion.div>
+
+                    <motion.div
+                      className="mini-ticket"
+                      initial={{
+                        opacity: 0,
+                        x: -10,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        x: 0,
+                      }}
+                      viewport={{
+                        once: true,
+                      }}
+                      transition={{
+                        delay: 0.45,
+                      }}
+                    >
+
+                      <div>
+                        <strong>
+                          Printer not responding
+                        </strong>
+
+                        <span>
+                          JZA-1040
+                        </span>
+                      </div>
+
+                      <span className="mini-ticket-status open">
+                        Open
+                      </span>
+
+                    </motion.div>
+
+                  </div>
+
+                </motion.div>
+
+                <motion.p
+                  className="solution-preview-note"
+                  initial={{
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
+                  transition={{
+                    delay: 0.55,
+                  }}
+                >
+                  Representative interface preview — data shown is
+                  for demonstration purposes.
+                </motion.p>
 
               </div>
-
-              <p className="solution-preview-note">
-                Representative interface preview — data shown is
-                for demonstration purposes.
-              </p>
-
-            </motion.div>
+            </Reveal>
 
           </div>
 
@@ -590,33 +701,34 @@ function Home() {
 
           <div className="home-why-grid">
 
-            <div className="home-why-intro">
+            <Reveal direction="left">
+              <div className="home-why-intro">
 
-              <span className="eyebrow">
-                WHY WORK WITH ME
-              </span>
+                <span className="eyebrow">
+                  WHY WORK WITH ME
+                </span>
 
-              <h2>
-                Technology should make business easier.
-              </h2>
+                <h2>
+                  Technology should make business easier.
+                </h2>
 
-              <p>
-                I approach IT from both the technical and
-                operational side. The objective is not simply
-                to install technology, but to make sure it
-                actually supports the people and processes
-                using it.
-              </p>
+                <p>
+                  I approach IT from both the technical and
+                  operational side. The goal is not simply to
+                  install technology, but to make sure it supports
+                  the people, processes and goals behind the business.
+                </p>
 
-              <Link
-                to="/about"
-                className="text-link"
-              >
-                More about me
-                <ArrowRight size={15} />
-              </Link>
+                <Link
+                  to="/about"
+                  className="text-link"
+                >
+                  More about me
+                  <ArrowRight size={15} />
+                </Link>
 
-            </div>
+              </div>
+            </Reveal>
 
             <div className="home-strengths">
 
@@ -626,7 +738,7 @@ function Home() {
                   key={strength}
                   initial={{
                     opacity: 0,
-                    x: 20,
+                    x: 25,
                   }}
                   whileInView={{
                     opacity: 1,
@@ -634,10 +746,15 @@ function Home() {
                   }}
                   viewport={{
                     once: true,
+                    amount: 0.2,
                   }}
                   transition={{
-                    duration: 0.4,
-                    delay: index * 0.08,
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  whileHover={{
+                    x: 6,
                   }}
                 >
 
@@ -672,17 +789,21 @@ function Home() {
             className="home-cta-inner"
             initial={{
               opacity: 0,
-              y: 20,
+              y: 25,
+              scale: 0.98,
             }}
             whileInView={{
               opacity: 1,
               y: 0,
+              scale: 1,
             }}
             viewport={{
               once: true,
+              amount: 0.25,
             }}
             transition={{
-              duration: 0.6,
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
             }}
           >
 
@@ -704,13 +825,22 @@ function Home() {
 
             </div>
 
-            <Link
-              to="/contact"
-              className="btn btn-primary"
+            <motion.div
+              whileHover={{
+                scale: 1.03,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
             >
-              Request an IT Service
-              <ArrowRight size={17} />
-            </Link>
+              <Link
+                to="/contact"
+                className="btn btn-primary"
+              >
+                Request an IT Service
+                <ArrowRight size={17} />
+              </Link>
+            </motion.div>
 
           </motion.div>
 

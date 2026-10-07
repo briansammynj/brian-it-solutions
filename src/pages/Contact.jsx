@@ -1,586 +1,627 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   CheckCircle2,
+  Clock3,
   Mail,
   MessageCircle,
   Phone,
+  Send,
+  ShieldCheck,
+  Sparkles,
 } from "lucide-react";
 import { useForm } from "@formspree/react";
+import { Link } from "react-router-dom";
 
-const serviceOptions = [
-  "IT Support",
-  "POS Systems",
-  "Networking & Infrastructure",
-  "Inventory & Business Systems",
-  "IT Helpdesk System",
-  "Custom Software",
-  "System Integration",
-  "IT Maintenance",
-  "Other",
-];
+import Reveal from "../components/Reveal";
 
 function Contact() {
-  const [state, handleSubmit, reset] = useForm("xwlpagpd");
+  const [state, handleSubmit] = useForm("xwlpagpd");
+  const [selectedService, setSelectedService] = useState("");
+
+  const services = [
+    {
+      title: "IT Support",
+      description: "Troubleshooting, maintenance and technical assistance.",
+    },
+    {
+      title: "POS Systems",
+      description: "POS setup, support, troubleshooting and integration.",
+    },
+    {
+      title: "Networking",
+      description: "Business networks, connectivity and infrastructure.",
+    },
+    {
+      title: "Business Systems",
+      description: "Inventory, operational and business technology systems.",
+    },
+    {
+      title: "IT Helpdesk",
+      description: "Ticketing, support workflows and service management.",
+    },
+    {
+      title: "Custom Software",
+      description: "Purpose-built systems, integrations and automation.",
+    },
+    {
+      title: "System Integration",
+      description: "Connecting business applications and technology platforms.",
+    },
+    {
+      title: "IT Maintenance",
+      description: "Ongoing technical maintenance and system support.",
+    },
+  ];
+
+  const handleServiceSelect = (service) => {
+    setSelectedService(service);
+  };
+
+  const whatsappMessage = encodeURIComponent(
+    "Hello Brian, I found your website and would like to enquire about your IT services."
+  );
 
   return (
     <>
       <Helmet>
-        <title>Contact Brian Mumo | IT Solutions & Support</title>
-
-        <link
-          rel="canonical"
-          href="https://brian-it-solutions.vercel.app/contact"
-        />
+        <title>
+          Contact Brian Mumo | IT Solutions & Support
+        </title>
 
         <meta
           name="description"
-          content="Contact Brian Mumo for IT support, POS systems, networking, business systems, IT helpdesk solutions, system integration, custom software and IT maintenance."
-        />
-
-        <meta
-          name="keywords"
-          content="Brian Mumo, IT support Kenya, IT solutions Kenya, POS support Kenya, networking support Kenya, IT consultant Kenya, business systems Kenya, custom software Kenya"
-        />
-
-        <meta
-          property="og:title"
-          content="Contact Brian Mumo | IT Solutions & Support"
-        />
-
-        <meta
-          property="og:description"
-          content="Get in touch with Brian Mumo for practical IT support, POS systems, networking, business systems, system integration and custom software solutions."
-        />
-
-        <meta
-          property="og:type"
-          content="website"
-        />
-
-        <meta
-          property="og:url"
-          content="https://brian-it-solutions.vercel.app/contact"
-        />
-
-        <meta
-          property="og:image"
-          content="https://brian-it-solutions.vercel.app/og-image.jpg"
+          content="Request IT support, POS services, networking, business systems, helpdesk solutions, custom software or other technology services from Brian Mumo."
         />
       </Helmet>
 
       {/* =====================================================
-          PAGE HERO
-      ===================================================== */}
+          CONTACT HERO
+          ===================================================== */}
 
-      <section className="page-hero contact-page-hero">
+      <section className="contact-hero">
         <div className="container">
-          <motion.div
-            className="page-hero-content"
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-            }}
-          >
-            <span className="eyebrow">
-              GET IN TOUCH
-            </span>
+          <div className="contact-hero-grid">
+            <Reveal direction="left">
+              <div className="contact-hero-content">
+                <span className="eyebrow">
+                  GET IN TOUCH
+                </span>
 
-            <h1>
-              Let's solve your technology challenges.
-            </h1>
-
-            <p>
-              Whether you need IT support, a POS solution,
-              networking, a business system or custom software,
-              tell me what you need and let's work out a practical
-              solution.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          CONTACT SECTION
-      ===================================================== */}
-
-      <section className="contact-section">
-        <div className="container">
-          <div className="contact-grid">
-
-            {/* =================================================
-                CONTACT INFORMATION
-            ================================================= */}
-
-            <motion.div
-              className="contact-info"
-              initial={{
-                opacity: 0,
-                x: -25,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
-            >
-              <span className="eyebrow">
-                START A CONVERSATION
-              </span>
-
-              <h2>
-                Tell me what you need.
-              </h2>
-
-              <p>
-                You don't need to have all the technical details
-                figured out before getting in touch. Explain the
-                business problem, system or project and we can
-                work through the requirements together.
-              </p>
-
-              <div className="contact-methods">
-
-                {/* Email */}
-
-                <a
-                  href="mailto:brianmumoit@gmail.com"
-                  className="contact-method"
-                >
-                  <div className="contact-method-icon">
-                    <Mail size={19} />
-                  </div>
-
-                  <div>
-                    <span>Email</span>
-
-                    <strong>
-                      brianmumoit@gmail.com
-                    </strong>
-                  </div>
-                </a>
-
-                {/* Phone */}
-
-                <a
-                  href="tel:+254711437854"
-                  className="contact-method"
-                >
-                  <div className="contact-method-icon">
-                    <Phone size={19} />
-                  </div>
-
-                  <div>
-                    <span>Phone</span>
-
-                    <strong>
-                      +254 711 437 854
-                    </strong>
-                  </div>
-                </a>
-
-                {/* WhatsApp */}
-
-                <a
-                  href="https://wa.me/254711437854"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="contact-method"
-                >
-                  <div className="contact-method-icon">
-                    <MessageCircle size={19} />
-                  </div>
-
-                  <div>
-                    <span>WhatsApp</span>
-
-                    <strong>
-                      Chat on WhatsApp
-                    </strong>
-                  </div>
-                </a>
-
-              </div>
-
-              <div className="contact-note">
-                <CheckCircle2 size={18} />
+                <h1>
+                  Let's solve your
+                  <span> technology challenge.</span>
+                </h1>
 
                 <p>
-                  Practical technology solutions designed around
-                  your business needs, existing systems and
-                  operational requirements.
+                  Tell me what your business needs help with.
+                  Whether it's IT support, POS, networking,
+                  business systems or a custom solution, I'll
+                  help you identify a practical way forward.
                 </p>
-              </div>
-            </motion.div>
 
-            {/* =================================================
-                CONTACT FORM
-            ================================================= */}
-
-            <motion.div
-              className="contact-form-wrapper"
-              initial={{
-                opacity: 0,
-                x: 25,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
-            >
-              {state.succeeded ? (
-                <div className="contact-success">
-
-                  <div className="contact-success-icon">
-                    <CheckCircle2 size={30} />
-                  </div>
-
-                  <h2>
-                    Request sent successfully.
-                  </h2>
-
-                  <p>
-                    Thank you for getting in touch. Your service
-                    request has been received. I'll review your
-                    request and get back to you as soon as possible.
-                  </p>
-
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={reset}
+                <div className="contact-hero-points">
+                  <motion.div
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    Send Another Request
-                  </button>
+                    <CheckCircle2 size={17} />
+                    <span>Business-focused solutions</span>
+                  </motion.div>
 
+                  <motion.div
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <CheckCircle2 size={17} />
+                    <span>Practical technical support</span>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <CheckCircle2 size={17} />
+                    <span>Clear communication from start to finish</span>
+                  </motion.div>
                 </div>
-              ) : (
-                <form
-                  className="contact-form"
-                  onSubmit={handleSubmit}
+              </div>
+            </Reveal>
+
+            <Reveal direction="right" delay={0.1}>
+              <motion.div
+                className="contact-quick-card"
+                whileHover={{ y: -5 }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                <div className="contact-quick-top">
+                  <div className="contact-quick-icon">
+                    <MessageCircle size={21} />
+                  </div>
+
+                  <div>
+                    <span>QUICK CONTACT</span>
+                    <strong>Prefer a direct conversation?</strong>
+                  </div>
+                </div>
+
+                <p>
+                  Reach out directly and let's discuss what
+                  you're trying to solve.
+                </p>
+
+                <div className="contact-direct-links">
+                  <a href="mailto:brianmumoit@gmail.com">
+                    <Mail size={17} />
+                    <span>
+                      <small>Email</small>
+                      brianmumoit@gmail.com
+                    </span>
+                  </a>
+
+                  <a href="tel:+254711437854">
+                    <Phone size={17} />
+                    <span>
+                      <small>Phone</small>
+                      +254 711 437 854
+                    </span>
+                  </a>
+                </div>
+
+                <a
+                  href={`https://wa.me/254711437854?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-whatsapp-link"
                 >
-
-                  <div className="form-heading">
-                    <h2>
-                      Request an IT Service
-                    </h2>
-
-                    <p>
-                      Share a few details about your business,
-                      technology needs or current issue so I can
-                      better understand how to help.
-                    </p>
-                  </div>
-
-                  {/* Name + Company */}
-
-                  <div className="form-row">
-
-                    <div className="form-group">
-                      <label htmlFor="name">
-                        Your Name
-                      </label>
-
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="John Doe"
-                        autoComplete="name"
-                        required
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="company">
-                        Company / Business
-                      </label>
-
-                      <input
-                        id="company"
-                        name="company"
-                        type="text"
-                        placeholder="Company name"
-                        autoComplete="organization"
-                      />
-                    </div>
-
-                  </div>
-
-                  {/* Email + Phone */}
-
-                  <div className="form-row">
-
-                    <div className="form-group">
-                      <label htmlFor="email">
-                        Email Address
-                      </label>
-
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="you@company.com"
-                        autoComplete="email"
-                        required
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="phone">
-                        Phone Number
-                      </label>
-
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="+254 ..."
-                        autoComplete="tel"
-                      />
-                    </div>
-
-                  </div>
-
-                  {/* Location + Service */}
-
-                  <div className="form-row">
-
-                    <div className="form-group">
-                      <label htmlFor="location">
-                        Business Location
-                      </label>
-
-                      <input
-                        id="location"
-                        name="location"
-                        type="text"
-                        placeholder="e.g. Nairobi"
-                        autoComplete="address-level2"
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="service">
-                        Service Needed
-                      </label>
-
-                      <select
-                        id="service"
-                        name="service"
-                        required
-                        defaultValue=""
-                      >
-                        <option value="" disabled>
-                          Select a service
-                        </option>
-
-                        {serviceOptions.map((service) => (
-                          <option
-                            key={service}
-                            value={service}
-                          >
-                            {service}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                  </div>
-
-                  {/* Urgency + Preferred Contact */}
-
-                  <div className="form-row">
-
-                    <div className="form-group">
-                      <label htmlFor="urgency">
-                        How urgent is this?
-                      </label>
-
-                      <select
-                        id="urgency"
-                        name="urgency"
-                        defaultValue=""
-                      >
-                        <option value="" disabled>
-                          Select urgency
-                        </option>
-
-                        <option value="General enquiry">
-                          General enquiry
-                        </option>
-
-                        <option value="Planning / Future project">
-                          Planning / Future project
-                        </option>
-
-                        <option value="Need assistance soon">
-                          Need assistance soon
-                        </option>
-
-                        <option value="Urgent business issue">
-                          Urgent business issue
-                        </option>
-                      </select>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="preferred_contact">
-                        Preferred Contact
-                      </label>
-
-                      <select
-                        id="preferred_contact"
-                        name="preferred_contact"
-                        defaultValue=""
-                      >
-                        <option value="" disabled>
-                          Select method
-                        </option>
-
-                        <option value="Email">
-                          Email
-                        </option>
-
-                        <option value="Phone">
-                          Phone
-                        </option>
-
-                        <option value="WhatsApp">
-                          WhatsApp
-                        </option>
-                      </select>
-                    </div>
-
-                  </div>
-
-                  {/* Message */}
-
-                  <div className="form-group">
-                    <label htmlFor="message">
-                      Tell me about your request
-                    </label>
-
-                    <textarea
-                      id="message"
-                      name="message"
-                      placeholder="Describe the problem, system or project you need help with..."
-                      rows="6"
-                      required
-                    />
-                  </div>
-
-                  {/* Formspree errors */}
-
-                  {state.errors && (
-                    <div className="form-error">
-                      <strong>
-                        Something went wrong.
-                      </strong>
-
-                      <p>
-                        Your request could not be submitted.
-                        Please try again or contact me directly
-                        through WhatsApp, phone or email.
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Submit */}
-
-                  <button
-                    type="submit"
-                    className="btn btn-primary form-submit"
-                    disabled={state.submitting}
-                  >
-                    {state.submitting
-                      ? "Sending Request..."
-                      : "Send Service Request"}
-
-                    <ArrowRight size={17} />
-                  </button>
-
-                  <p className="form-disclaimer">
-                    Your information will only be used to respond
-                    to your service request.
-                  </p>
-
-                </form>
-              )}
-            </motion.div>
-
+                  <MessageCircle size={17} />
+                  Chat on WhatsApp
+                  <ArrowRight size={15} />
+                </a>
+              </motion.div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* =====================================================
-          BOTTOM CTA
-      ===================================================== */}
+          SERVICE REQUEST
+          ===================================================== */}
 
-      <section className="contact-bottom">
+      <section className="contact-request">
         <div className="container">
+          <div className="contact-request-grid">
+            <Reveal direction="left">
+              <div className="contact-service-panel">
+                <span className="eyebrow">
+                  WHAT DO YOU NEED?
+                </span>
 
+                <h2>
+                  Choose a service
+                  <span> to get started.</span>
+                </h2>
+
+                <p>
+                  Select the area you'd like help with. You can
+                  then provide a few details so I can understand
+                  your request before getting in touch.
+                </p>
+
+                <div className="contact-service-grid">
+                  {services.map((service, index) => {
+                    const isSelected =
+                      selectedService === service.title;
+
+                    return (
+                      <motion.button
+                        type="button"
+                        key={service.title}
+                        className={`contact-service-option ${
+                          isSelected ? "selected" : ""
+                        }`}
+                        onClick={() =>
+                          handleServiceSelect(service.title)
+                        }
+                        initial={{
+                          opacity: 0,
+                          y: 18,
+                        }}
+                        whileInView={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        viewport={{
+                          once: true,
+                          amount: 0.1,
+                        }}
+                        transition={{
+                          duration: 0.45,
+                          delay: index * 0.05,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
+                        whileHover={{
+                          y: -3,
+                        }}
+                        whileTap={{
+                          scale: 0.98,
+                        }}
+                      >
+                        <span className="contact-service-check">
+                          {isSelected ? (
+                            <CheckCircle2 size={16} />
+                          ) : (
+                            <span />
+                          )}
+                        </span>
+
+                        <span className="contact-service-copy">
+                          <strong>{service.title}</strong>
+                          <small>{service.description}</small>
+                        </span>
+                      </motion.button>
+                    );
+                  })}
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal direction="right" delay={0.1}>
+              <div className="contact-form-card">
+                {state.succeeded ? (
+                  <motion.div
+                    className="contact-success"
+                    initial={{
+                      opacity: 0,
+                      scale: 0.96,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  >
+                    <div className="contact-success-icon">
+                      <CheckCircle2 size={30} />
+                    </div>
+
+                    <span className="eyebrow">
+                      REQUEST RECEIVED
+                    </span>
+
+                    <h2>
+                      Thanks for reaching out.
+                    </h2>
+
+                    <p>
+                      Your service request has been sent
+                      successfully. I'll review the details and
+                      get back to you as soon as possible.
+                    </p>
+
+                    <Link
+                      to="/"
+                      className="btn btn-primary"
+                    >
+                      Back to Home
+                      <ArrowRight size={17} />
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <>
+                    <div className="contact-form-header">
+                      <div>
+                        <span className="eyebrow">
+                          SERVICE REQUEST
+                        </span>
+
+                        <h2>
+                          Tell me about your needs.
+                        </h2>
+                      </div>
+
+                      <div className="contact-form-badge">
+                        <Sparkles size={15} />
+                        Let's talk
+                      </div>
+                    </div>
+
+                    {state.errors?.length > 0 && (
+                      <div className="contact-form-error">
+                        Something went wrong while sending your
+                        request. Please try again or contact me
+                        directly.
+                      </div>
+                    )}
+
+                    <form
+                      onSubmit={(event) => {
+                        if (!selectedService) {
+                          event.preventDefault();
+                          return;
+                        }
+
+                        handleSubmit(event);
+                      }}
+                      className="contact-form"
+                    >
+                      <input
+                        type="hidden"
+                        name="service"
+                        value={selectedService}
+                      />
+
+                      <div className="contact-form-row">
+                        <label>
+                          <span>Your name</span>
+
+                          <input
+                            type="text"
+                            name="name"
+                            placeholder="Your name"
+                            required
+                          />
+                        </label>
+
+                        <label>
+                          <span>Email address</span>
+
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="you@company.com"
+                            required
+                          />
+                        </label>
+                      </div>
+
+                      <label>
+                        <span>Company / Business</span>
+
+                        <input
+                          type="text"
+                          name="company"
+                          placeholder="Your business name"
+                        />
+                      </label>
+
+                      <label>
+                        <span>Selected service</span>
+
+                        <div
+                          className={`contact-selected-service ${
+                            selectedService ? "has-value" : ""
+                          }`}
+                        >
+                          {selectedService || "Select a service above"}
+                        </div>
+                      </label>
+
+                      <label>
+                        <span>Tell me about your request</span>
+
+                        <textarea
+                          name="message"
+                          rows="6"
+                          placeholder="Briefly describe the problem, system or service you need help with..."
+                          required
+                        />
+                      </label>
+
+                      <div className="contact-form-bottom">
+                        <div className="contact-form-note">
+                          <ShieldCheck size={16} />
+
+                          <span>
+                            Your information is only used to
+                            respond to your enquiry.
+                          </span>
+                        </div>
+
+                        <motion.button
+                          type="submit"
+                          className="btn btn-primary contact-submit"
+                          disabled={
+                            state.submitting || !selectedService
+                          }
+                          whileHover={{
+                            y: -2,
+                          }}
+                          whileTap={{
+                            scale: 0.98,
+                          }}
+                        >
+                          {state.submitting ? (
+                            <>
+                              <span className="contact-spinner" />
+                              Sending...
+                            </>
+                          ) : (
+                            <>
+                              Send Request
+                              <Send size={16} />
+                            </>
+                          )}
+                        </motion.button>
+                      </div>
+
+                      {!selectedService && (
+                        <p className="contact-selection-hint">
+                          Select a service above before sending
+                          your request.
+                        </p>
+                      )}
+                    </form>
+                  </>
+                )}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          WHAT HAPPENS NEXT
+          ===================================================== */}
+
+      <section className="contact-next">
+        <div className="container">
+          <Reveal>
+            <div className="section-heading contact-section-heading">
+              <span className="eyebrow">
+                WHAT HAPPENS NEXT
+              </span>
+
+              <h2>
+                Simple from the first
+                <span> conversation.</span>
+              </h2>
+
+              <p>
+                No complicated process. We start by understanding
+                what you need and work from there.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="contact-next-grid">
+            <Reveal direction="left">
+              <motion.div
+                className="contact-next-card"
+                whileHover={{ y: -5 }}
+              >
+                <span className="contact-next-number">
+                  01
+                </span>
+
+                <div className="contact-next-icon">
+                  <MessageCircle size={20} />
+                </div>
+
+                <h3>Tell me what you need</h3>
+
+                <p>
+                  Send a request through the form or contact me
+                  directly with the challenge you're facing.
+                </p>
+              </motion.div>
+            </Reveal>
+
+            <Reveal direction="up" delay={0.1}>
+              <motion.div
+                className="contact-next-card"
+                whileHover={{ y: -5 }}
+              >
+                <span className="contact-next-number">
+                  02
+                </span>
+
+                <div className="contact-next-icon">
+                  <Clock3 size={20} />
+                </div>
+
+                <h3>We discuss the solution</h3>
+
+                <p>
+                  I'll review your requirements and we can
+                  discuss the most practical approach.
+                </p>
+              </motion.div>
+            </Reveal>
+
+            <Reveal direction="right" delay={0.2}>
+              <motion.div
+                className="contact-next-card"
+                whileHover={{ y: -5 }}
+              >
+                <span className="contact-next-number">
+                  03
+                </span>
+
+                <div className="contact-next-icon">
+                  <CheckCircle2 size={20} />
+                </div>
+
+                <h3>Move forward</h3>
+
+                <p>
+                  Once we agree on the approach, implementation,
+                  support or next steps can begin.
+                </p>
+              </motion.div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FINAL CTA
+          ===================================================== */}
+
+      <section className="contact-cta">
+        <div className="container">
           <motion.div
-            className="contact-bottom-inner"
+            className="contact-cta-inner"
             initial={{
               opacity: 0,
-              y: 20,
+              y: 25,
+              scale: 0.98,
             }}
             whileInView={{
               opacity: 1,
               y: 0,
+              scale: 1,
             }}
             viewport={{
               once: true,
+              amount: 0.2,
             }}
             transition={{
-              duration: 0.6,
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
             }}
           >
             <div>
               <span className="eyebrow">
-                NEED IT SUPPORT?
+                READY WHEN YOU ARE
               </span>
 
               <h2>
-                Let's find the right technology solution.
+                Let's make your technology
+                <span> work better.</span>
               </h2>
 
               <p>
-                From troubleshooting an existing system to
-                implementing something completely new.
+                Have a problem, an idea or a system that needs
+                improving? Start the conversation today.
               </p>
             </div>
 
-            <a
-              href="mailto:brianmumoit@gmail.com"
+            <motion.a
+              href={`https://wa.me/254711437854?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary"
+              whileHover={{
+                scale: 1.03,
+                y: -2,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
             >
-              Email Me
-              <ArrowRight size={17} />
-            </a>
-
+              Chat on WhatsApp
+              <MessageCircle size={17} />
+            </motion.a>
           </motion.div>
-
         </div>
       </section>
     </>
